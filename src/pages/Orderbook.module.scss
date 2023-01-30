@@ -1,0 +1,26 @@
+.wrapper {
+	display: flex;
+	flex: 1;
+	background-color: #e5e5e590;
+	height: 100%;
+
+	.sidemenu {
+		flex: 1;
+	}
+
+	.container {
+		display: flex;
+		flex: 7;
+		flex-direction: column;
+
+		.main {
+			display: flex;
+			flex-direction: column;
+
+			.table {
+				display: flex;
+				justify-content: space-around;
+			}
+		}
+	}
+}

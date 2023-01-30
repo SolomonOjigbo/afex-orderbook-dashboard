@@ -1,0 +1,21 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	background-color: #e5e5e590;
+	height: 100%;
+
+	.main {
+		display: flex;
+		flex: 1;
+		background-color: #e5e5e590;
+
+		.sidebar {
+			flex: 1;
+		}
+
+		.orderbook {
+			flex: 10;
+		}
+	}
+}
