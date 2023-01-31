@@ -1,0 +1,48 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	font-family: Roboto;
+	gap: 30px;
+	padding: 10px 10px 30px 10px;
+
+	.search {
+		display: flex;
+		align-items: center;
+		background-color: #b8b6b64a;
+		height: 15px;
+		width: 160px;
+		padding: 8px;
+		border-radius: 1px;
+		border: 0.5px solid #21407d43;
+
+		input {
+			width: 100%;
+			outline: none;
+			background-color: #b8b6b64a;
+			height: 20px;
+			border: none;
+			font-size: 12px;
+			color: #3e3d3d;
+			opacity: 0.5;
+		}
+
+		.icon {
+			align-items: center;
+			font-size: 20px;
+		}
+	}
+
+	.menu_item {
+		display: flex;
+		justify-content: flex-start;
+		padding: 20px 10px 0 20px;
+
+		> span {
+			font-size: 14px;
+			font-weight: 500;
+			text-align: left;
+			margin-left: 10px;
+		}
+	}
+}

@@ -7,7 +7,7 @@
 
 	.header_left {
 		display: flex;
-		flex: 2;
+		flex: 3;
 		justify-content: space-between;
 
 		.logo {
@@ -19,14 +19,15 @@
 
 	.header_right {
 		display: flex;
-		flex: 3;
-		justify-content: space-evenly;
+		flex: 2;
+		justify-content: space-between;
 		border-left: 1px solid rgb(218, 218, 218);
+		padding-right: 30px;
 
 		.arrow_icon {
 			display: flex;
 			font-size: small;
-			justify-content: flex-start;
+			padding: 15px;
 		}
 
 		> span > ul > li {
