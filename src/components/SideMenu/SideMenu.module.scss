@@ -3,7 +3,8 @@
 	flex-direction: column;
 	background-color: white;
 	font-family: Roboto;
-	gap: 30px;
+	gap: 20px;
+	height: fit-content;
 	padding: 10px 10px 30px 10px;
 
 	.search {
@@ -36,7 +37,7 @@
 	.menu_item {
 		display: flex;
 		justify-content: flex-start;
-		padding: 20px 10px 0 20px;
+		padding: 10px 10px 0 10px;
 
 		> span {
 			font-size: 14px;

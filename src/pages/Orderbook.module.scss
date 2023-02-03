@@ -18,10 +18,15 @@
 		.main {
 			display: flex;
 			flex-direction: column;
+			justify-content: space-between;
 
 			.table {
 				display: flex;
-				justify-content: space-around;
+				margin-top: 5px;
+				gap: 5px;
+			}
+			.log {
+				margin-top: 12px;
 			}
 		}
 	}

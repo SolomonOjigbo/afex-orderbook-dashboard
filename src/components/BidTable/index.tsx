@@ -3,11 +3,12 @@ import styles from "./BidTable.module.scss";
 import Button from "@mui/material/Button";
 
 import { DataGrid, GridColumns } from "@mui/x-data-grid";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { Product, selectAllProducts } from "../../features/productSlice";
+import { productData } from "../../dummyData";
 
 const BidTable = () => {
-	const products = useSelector(selectAllProducts);
+	// const products = useSelector(selectAllProducts);
 
 	const buyHandler = (params: any) => {
 		const name: string = params.row.name;
@@ -17,19 +18,19 @@ const BidTable = () => {
 	const dataColumns = useMemo<GridColumns<Product>>(
 		() => [
 			{
-				field: "products",
+				field: "name",
 				headerName: "Products",
-				width: 220,
+				width: 200,
 			},
 			{
 				field: "quantity",
 				headerName: "Quantity",
-				width: 220,
+				width: 100,
 			},
 			{
 				field: "bidPrice",
 				headerName: "Bid Price",
-				width: 200,
+				width: 100,
 			},
 			{
 				field: "action",
@@ -38,7 +39,11 @@ const BidTable = () => {
 				width: 100,
 				renderCell: (params) => {
 					return (
-						<Button variant="outlined" onClick={(event) => buyHandler(params)}>
+						<Button
+							sx={{ color: "#52965E" }}
+							variant="outlined"
+							onClick={(event) => buyHandler(params)}
+						>
 							Buy
 						</Button>
 					);
@@ -51,11 +56,14 @@ const BidTable = () => {
 	return (
 		<div className={styles.table}>
 			<DataGrid
-				rows={products}
+				sx={{ height: 400, width: 609, border: "none", paddingLeft: 2 }}
+				rows={productData}
+				getRowId={(row: any) => row.code}
 				columns={dataColumns}
-				pageSize={10}
+				pageSize={5}
+				rowsPerPageOptions={[10]}
 				onCellClick={buyHandler}
-				rowsPerPageOptions={[5, 10, 20]}
+				disableColumnFilter={true}
 				disableColumnMenu={true}
 				localeText={{
 					toolbarFilters: "",

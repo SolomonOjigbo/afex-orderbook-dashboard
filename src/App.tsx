@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import styles from "./App.module.scss";
 import Sidebar from "./components/Sidebar";
 import Orderbook from "./pages/Orderbook";
+import LiveMarket from "./components/LiveMarket";
 
 function App() {
 	return (
@@ -16,6 +17,9 @@ function App() {
 				<div className={styles.orderbook}>
 					<Orderbook />
 				</div>
+			</div>
+			<div className={styles.live_market}>
+				<LiveMarket />
 			</div>
 		</div>
 	);
