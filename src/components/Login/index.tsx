@@ -4,7 +4,6 @@ import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -52,7 +51,7 @@ function Login() {
 	}, [isAuthenticated, navigate]);
 
 	return (
-		<Container className={styles.container}>
+		<div className={styles.container}>
 			<CssBaseline />
 			<Box
 				sx={{
@@ -60,8 +59,6 @@ function Login() {
 					marginTop: 15,
 					padding: 5,
 					border: 1,
-					alignItems: "center",
-					justifyContent: "center",
 				}}
 			>
 				<Grid textAlign="center">
@@ -133,7 +130,7 @@ function Login() {
 					</Button>
 				</Box>
 			</Box>
-		</Container>
+		</div>
 	);
 }
 
