@@ -18,7 +18,6 @@
 		"@types/react-dom": "^18.0.6",
 		"@types/react-redux": "^7.1.25",
 		"axios": "^1.2.6",
-		"encryption.js": "^0.1.5",
 		"moment": "^2.29.4",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",

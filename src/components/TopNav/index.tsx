@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./TopNav.module.scss";
-import { Button } from "@mui/material";
 
 const TopNav = () => {
 	return (
