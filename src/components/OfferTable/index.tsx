@@ -1,11 +1,10 @@
 import styles from "./OfferTable.module.scss";
 import React, { useEffect, useMemo, useState } from "react";
 import Button from "@mui/material/Button";
-
 import { DataGrid, GridColumns } from "@mui/x-data-grid";
 // import { useSelector } from "react-redux";
-import { Product, selectAllProducts } from "../../features/productSlice";
 import { productData } from "../../dummyData";
+import { Product } from "../../models/product";
 
 const OfferTable = () => {
 	const sellHandler = (params: any) => {

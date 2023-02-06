@@ -1,27 +1,32 @@
-import React from "react";
-import Header from "./components/Header";
-import styles from "./App.module.scss";
-import Sidebar from "./components/Sidebar";
-import Orderbook from "./pages/Orderbook";
-import LiveMarket from "./components/LiveMarket";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Main from "./Main";
+import Register from "./components/Register/Register";
+import { useAppSelector } from "./hooks/useTypedSelector";
+import Login from "./components/Login";
+import ProtectedRoute, { ProtectedRouteProps } from "./ProtectedRoute";
 
 function App() {
-	return (
-		<div className={styles.container}>
-			<Header />
+	const isAuthenticated = useAppSelector((state) => state.user.isAuthenticated);
 
-			<div className={styles.main}>
-				<div className={styles.sidebar}>
-					<Sidebar />
-				</div>
-				<div className={styles.orderbook}>
-					<Orderbook />
-				</div>
-			</div>
-			<div className={styles.live_market}>
-				<LiveMarket />
-			</div>
-		</div>
+	const defaultProtectedRouteProps: Omit<ProtectedRouteProps, "outlet"> = {
+		isAuthenticated: isAuthenticated,
+		authenticationPath: "/login",
+	};
+
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/login" element={<Login />} />
+				<Route path="/register" element={<Register />} />
+				<Route
+					path="/"
+					element={
+						<ProtectedRoute {...defaultProtectedRouteProps} outlet={<Main />} />
+					}
+				/>
+			</Routes>
+		</BrowserRouter>
 	);
 }
 

@@ -4,8 +4,8 @@ import Button from "@mui/material/Button";
 
 import { DataGrid, GridColumns } from "@mui/x-data-grid";
 // import { useSelector } from "react-redux";
-import { Product, selectAllProducts } from "../../features/productSlice";
 import { productData } from "../../dummyData";
+import { Product } from "../../models/product";
 
 const BidTable = () => {
 	// const products = useSelector(selectAllProducts);

@@ -1,10 +1,7 @@
 import React from "react";
 import styles from "./LiveMarket.module.scss";
-import { DarkMode } from "@mui/icons-material";
-import Logo from "../../assests/Logo.png";
 import { Button } from "@mui/material";
 import { logData } from "../../dummyData";
-import { Product } from "../../features/productSlice";
 
 interface LiveTicker {
 	security_code: string;

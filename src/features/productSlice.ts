@@ -1,14 +1,8 @@
-// import { InitialRows } from "./components/BidTable";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
+import { Product } from "../models/product";
 
 const API_URL = "https://comx-sand-api.afexnigeria.com/api/securities/boards";
-
-export type Product = {
-	name: string;
-	quantity: number;
-	bidPrice: number;
-};
 
 export interface IProduct {
 	error: string | null;
@@ -25,8 +19,20 @@ const initialState = {
 export const getProducts = createAsyncThunk(
 	"products/getProducts",
 	async () => {
-		const { data } = await axios.get<Product[]>(API_URL);
-		return data;
+		try {
+			let token = localStorage.getItem("token");
+			const config = {
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: "Bearer " + token,
+				},
+			};
+			const { data } = await axios.get(API_URL, config);
+
+			return data;
+		} catch (error: any) {
+			return console.log(error.data.message);
+		}
 	}
 );
 
@@ -34,9 +40,9 @@ const productSlice = createSlice({
 	name: "products",
 	initialState,
 	reducers: {},
-	extraReducers(builder) {
+	extraReducers: (builder) => {
 		builder
-			.addCase(getProducts.pending, (state) => {
+			.addCase(getProducts.pending, (state, action) => {
 				state.status = "pending";
 			})
 			.addCase(
@@ -53,6 +59,7 @@ const productSlice = createSlice({
 	},
 });
 
-export const selectAllProducts = (state: IProduct) => state.data;
+// export const selectAllProducts = (state: { data: { products: Product[] } }) =>
+// 	state.data.products;
 
 export default productSlice.reducer;

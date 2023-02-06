@@ -1,3 +1,9 @@
+export type Product = {
+	name: string;
+	quantity: number;
+	bidPrice: number;
+};
+
 type OrderType = {
 	order_type?: string;
 	fee_name?: string;
