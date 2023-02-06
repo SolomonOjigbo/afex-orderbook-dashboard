@@ -35,13 +35,15 @@ const OfferTable = () => {
 				width: 100,
 				renderCell: (params) => {
 					return (
-						<Button
-							sx={{ color: "#E55541" }}
-							variant="outlined"
-							onClick={(event) => sellHandler(params)}
-						>
-							Sell
-						</Button>
+						<>
+							<Button
+								sx={{ color: "#E55541" }}
+								variant="outlined"
+								onClick={(event) => sellHandler(params)}
+							>
+								Sell
+							</Button>
+						</>
 					);
 				},
 			},
@@ -57,7 +59,7 @@ const OfferTable = () => {
 				getRowId={(row: any) => row.code}
 				columns={dataColumns}
 				pageSize={5}
-				rowsPerPageOptions={[10]}
+				rowsPerPageOptions={[5, 10]}
 				onCellClick={sellHandler}
 				disableColumnMenu={true}
 				localeText={{

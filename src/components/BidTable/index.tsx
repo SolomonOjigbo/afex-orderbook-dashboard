@@ -37,13 +37,15 @@ const BidTable = () => {
 				width: 100,
 				renderCell: (params) => {
 					return (
-						<Button
-							sx={{ color: "#52965E" }}
-							variant="outlined"
-							onClick={(event) => buyHandler(params)}
-						>
-							Buy
-						</Button>
+						<>
+							<Button
+								sx={{ color: "#52965E" }}
+								variant="outlined"
+								onClick={(event) => buyHandler(params)}
+							>
+								Buy
+							</Button>
+						</>
 					);
 				},
 			},
@@ -59,7 +61,7 @@ const BidTable = () => {
 				getRowId={(row: any) => row.code}
 				columns={dataColumns}
 				pageSize={5}
-				rowsPerPageOptions={[10]}
+				rowsPerPageOptions={[5, 10]}
 				onCellClick={buyHandler}
 				disableColumnFilter={true}
 				disableColumnMenu={true}

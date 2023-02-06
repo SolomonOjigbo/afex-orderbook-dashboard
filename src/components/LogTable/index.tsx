@@ -74,7 +74,7 @@ const LogTable = () => {
 				getRowId={(row: any) => row.security_code}
 				columns={dataColumns}
 				pageSize={5}
-				rowsPerPageOptions={[10]}
+				rowsPerPageOptions={[5, 10]}
 				disableColumnFilter={true}
 				disableColumnMenu={true}
 				localeText={{

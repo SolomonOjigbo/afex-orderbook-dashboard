@@ -8,9 +8,9 @@ import Switch from "@mui/material/Switch";
 import { RiArrowDropDownLine, RiArrowDropRightLine } from "react-icons/ri";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
-	width: 50,
-	height: 25,
-	padding: 7,
+	width: 60,
+	height: 32,
+	padding: 3,
 	"& .MuiSwitch-switchBase": {
 		margin: 1,
 		padding: 0,
@@ -32,7 +32,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 	"& .MuiSwitch-thumb": {
 		backgroundColor: theme.palette.mode === "dark" ? "#222730" : "#50555a",
 		width: 32,
-		height: 32,
+		height: 28,
 		"&:before": {
 			content: "''",
 			position: "absolute",
