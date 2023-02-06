@@ -4,12 +4,12 @@ import Logo from "../../assests/Logo.png";
 import { Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch, { SwitchProps } from "@mui/material/Switch";
+import Switch from "@mui/material/Switch";
 import { RiArrowDropDownLine, RiArrowDropRightLine } from "react-icons/ri";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
-	width: 62,
-	height: 34,
+	width: 50,
+	height: 25,
 	padding: 7,
 	"& .MuiSwitch-switchBase": {
 		margin: 1,

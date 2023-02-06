@@ -27,7 +27,6 @@ const validationSchema = Yup.object().shape({
 function Login() {
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
-	const token = useAppSelector((state) => state.user.user?.token);
 	const isAuthenticated = useAppSelector((state) => state.user.isAuthenticated);
 
 	const {
@@ -50,8 +49,7 @@ function Login() {
 			navigate("/");
 		}
 		console.log("isAthenticated :", isAuthenticated);
-		console.log("token :", token);
-	}, [isAuthenticated]);
+	}, [isAuthenticated, navigate]);
 
 	return (
 		<Container className={styles.container}>

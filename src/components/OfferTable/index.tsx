@@ -1,8 +1,7 @@
 import styles from "./OfferTable.module.scss";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import Button from "@mui/material/Button";
 import { DataGrid, GridColumns } from "@mui/x-data-grid";
-// import { useSelector } from "react-redux";
 import { productData } from "../../dummyData";
 import { Product } from "../../models/product";
 

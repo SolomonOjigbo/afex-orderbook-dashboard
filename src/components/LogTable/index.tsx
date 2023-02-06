@@ -1,9 +1,7 @@
 import styles from "./LogTable.module.scss";
 import moment from "moment";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { DataGrid, GridColumns } from "@mui/x-data-grid";
-// import { useSelector } from "react-redux";
-// import { Product } from "../../features/productSlice";
 import { logData } from "../../dummyData";
 import { logModel } from "../../models/product";
 const LogTable = () => {

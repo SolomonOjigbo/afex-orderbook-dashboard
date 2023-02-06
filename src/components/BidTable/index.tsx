@@ -1,15 +1,13 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import styles from "./BidTable.module.scss";
 import Button from "@mui/material/Button";
 
 import { DataGrid, GridColumns } from "@mui/x-data-grid";
-// import { useSelector } from "react-redux";
+
 import { productData } from "../../dummyData";
 import { Product } from "../../models/product";
 
 const BidTable = () => {
-	// const products = useSelector(selectAllProducts);
-
 	const buyHandler = (params: any) => {
 		const name: string = params.row.name;
 		console.log(name);
